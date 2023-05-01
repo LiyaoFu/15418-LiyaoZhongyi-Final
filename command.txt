@@ -1,0 +1,13 @@
+export OMP_NUM_THREADS=8
+g++ -fopenmp omp_solver.cpp -o omp_solver
+g++ -fopenmp omp_generator.cpp -o omp_generator
+g++ seq_solver.cpp -o seq_solver
+g++ seq_generator.cpp -o seq_generator
+
+mpic++ MPI_sudoku_solver.cpp -o MPI_sudoku_solver
+
+./omp_generator
+./omp_solver
+./seq_generator
+./seq_solver
+mpirun -n 8 MPI_sudoku_solver
