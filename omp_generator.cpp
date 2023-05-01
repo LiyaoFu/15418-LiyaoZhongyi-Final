@@ -145,6 +145,7 @@ int main()
 		solve(bigI, 0, 0);
 		
 		// create empty space
+		#pragma omp parallel for
 		for(int i=0; i<empty; i++) {
 			int curSize = selectMat.size();
 			int curVal = random()%curSize;
@@ -152,6 +153,7 @@ int main()
 		}
 		
 		// add to matrix
+		#pragma omp parallel for
 		for(int i=0; i<selectMat.size(); i++) {
 			outMatrix[bigI][selectMat[i].first][selectMat[i].second] = matrix[bigI][selectMat[i].first][selectMat[i].second];
 		}
