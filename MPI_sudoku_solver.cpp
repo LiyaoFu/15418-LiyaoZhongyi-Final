@@ -183,7 +183,7 @@ std::pair<int, std::vector<int>> solver(std::vector<int> baseSudoku, std::vector
                                 if (check[c] != -1) base[c] = check[c];
                             }
                             
-                            std::cerr << __LINE__ << " " << pid << std::endl;
+                            //std::cerr << __LINE__ << " " << pid << std::endl;
                             
                             printf("Worker %d has a solution \n", pid);
                             
