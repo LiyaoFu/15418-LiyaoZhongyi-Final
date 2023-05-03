@@ -34,7 +34,7 @@ void print_grid(int grid[SIZE][SIZE]) {
     }
 }
 
-//https://stackoverflow.com/questions/1726302/removing-spaces-from-a-string-in-c
+/*
 void remove_spaces(char* s) {
     const char* d = s;
     do {
@@ -43,6 +43,7 @@ void remove_spaces(char* s) {
         }
     } while (*s++ = *d++);
 }
+*/
 
 int is_exist_row(int grid[SIZE][SIZE], int row, int num){
     for (int col = 0; col < SIZE; col++) {
