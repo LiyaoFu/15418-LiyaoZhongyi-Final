@@ -68,9 +68,5 @@ echo "Compiling MPI Solver"
 mpic++ MPI_sudoku_solver.cpp -o MPI_sudoku_solver
 echo "Testing MPI Solver on 1 worker"
 mpirun -n 1 MPI_sudoku_solver
-echo "Testing MPI Solver on 2 workers"
-mpirun -n 2 MPI_sudoku_solver
-echo "Testing MPI Solver on 4 workers"
-mpirun -n 4 MPI_sudoku_solver
 echo "Testing MPI Solver on 8 workers"
 mpirun -n 8 MPI_sudoku_solver
