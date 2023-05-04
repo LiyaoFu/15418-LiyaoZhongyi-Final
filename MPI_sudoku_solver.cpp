@@ -73,6 +73,7 @@ std::pair<int, std::vector<int>> solver(std::vector<int> baseSudoku, std::vector
     
     int flag = 0;
     MPI_Status status;
+    MPI_Request request;
     
     //int curMax = 0;
     
@@ -253,7 +254,7 @@ std::pair<int, std::vector<int>> solver(std::vector<int> baseSudoku, std::vector
       	
       	for (int i = pid+1; i < nproc; i++) {
           if (i != pid) {
-            MPI_Send(&flag, 1, MPI_INT, i, MPI_TAG_STEAL, MPI_COMM_WORLD);
+            MPI_Isend(&flag, 1, MPI_INT, i, MPI_TAG_STEAL, MPI_COMM_WORLD, &request);
             int successRecv = 0;
             //std::cerr << __LINE__ << " " << pid <<":" << i << std::endl;
             
